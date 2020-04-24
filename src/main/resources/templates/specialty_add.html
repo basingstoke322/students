@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{parts/head}">
+</head>
+<body>
+<form th:action="@{/specialty_add}"
+      th:object="${specialty}" method="POST">
+    First Name:
+    <input type="text" th:field="*{spec_cost}" />
+    <br/>
+    Last Name:
+    <input type="text" th:field="*{spec_name}" />
+    <br/>
+    <input type="submit" value="Create" />
+</form>
+</body>
+</html>
