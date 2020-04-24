@@ -3,29 +3,24 @@
 <html>
 <head th:insert="~{parts/head}">
 </head>
-<head>
-    <script type="text/javascript" src="/js/specialty.js"></script>
-</head>
 <body>
 <div>
     <center>
-        <h1>Specialty</h1>
+        <h1>Type Education</h1>
     </center>
     <table class="table">
         <thead>
         <tr>
             <th>id</th>
-            <th>SPEC_NAME</th>
-            <th>SPEC_COST</th>
+            <th>EDUC_NAME</th>
             <th>DELETE</th>
             <th>EDIT</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="spec : ${data}">
-            <td class="id" th:text="${spec.id_specialty}"></td>
-            <td class="spec_name" th:text="${spec.spec_name}"></td>
-            <td class="spec_cost" th:text="${spec.spec_cost}"></td>
+        <tr th:each="teduc : ${data}">
+            <td class = "id" th:text="${teduc.id_type_education}"></td>
+            <td class = "spec_name" th:text="${teduc.educ_name}"></td>
             <td>
                 <button id="deleteButton" type="button" class="btn btn-primary">-</button>
             </td>
@@ -61,15 +56,9 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>SPEC_NAME:</td>
+                                    <td>EDUC_NAME:</td>
                                     <td>
                                         <textarea id="txtSpec_name"></textarea>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>SPEC_COST:</td>
-                                    <td>
-                                        <textarea id="txtSpec_cost"></textarea>
                                     </td>
                                 </tr>
                             </table>
