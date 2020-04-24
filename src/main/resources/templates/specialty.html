@@ -1,18 +1,86 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:insert="~{parts/head}"></head>
+<html>
+<head th:insert="~{parts/head}">
+</head>
 <body>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>NAME</th>
-        <th>COST</th>
-    </tr>
-    <tr th:each="spec : ${data}">
-        <td th:text="${spec.id_specialty}"></td>
-        <td th:text="${spec.spec_name}"></td>
-        <td th:text="${spec.spec_cost}"></td>
-    </tr>
-</table>
+<div>
+    <center>
+        <h1>Specialty</h1>
+    </center>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>SPEC_NAME</th>
+            <th>SPEC_COST</th>
+            <th>DELETE</th>
+            <th>EDIT</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="spec : ${data}">
+            <td class = "id" th:text="${spec.id_specialty}"></td>
+            <td class = "spec_name" th:text="${spec.spec_name}"></td>
+            <td class = "spec_cost" th:text="${spec.spec_cost}"></td>
+            <td>
+                <button id="deleteButton" type="button" class="btn btn-primary">-</button>
+            </td>
+            <td>
+                <button id="editButton" type="button" class="btn btn-primary">+</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 </body>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editing</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <fieldset>
+                        <center>
+                            <table cellspacing="15">
+                                <tr>
+                                    <td>ID:</td>
+                                    <td>
+                                        <textarea id="txtId"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>SPEC_NAME:</td>
+                                    <td>
+                                        <textarea id="txtSpec_name"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>SPEC_COST:</td>
+                                    <td>
+                                        <textarea id="txtSpec_cost"></textarea>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                        </center>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="sendEdit" type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 </html>
