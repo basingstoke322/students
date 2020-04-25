@@ -1,4 +1,4 @@
-package ru.nntu.students;
+package ru.nntu.students.Type_education;
 import javax.persistence.*;
 
 @Entity

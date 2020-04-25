@@ -1,4 +1,4 @@
-package ru.nntu.students;
+package ru.nntu.students.Type_education;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,23 +9,23 @@ import java.util.List;
 
 @Service
 @Transactional
-public class SpecialtyServiceImpl implements SpecialtyService{
-    private SpecialtyRepository repository;
+public class Type_educationServiceImpl implements Type_educationService{
+    private Type_educationRepository repository;
 
     @Autowired
-    public SpecialtyServiceImpl(SpecialtyRepository repository){
+    public Type_educationServiceImpl(Type_educationRepository repository){
         this.repository = repository;
     }
 
     @Override
-    public List getAllSpecialties() {
+    public List getAllTypesEducation() {
         List list = new ArrayList();
         repository.findAll().forEach(e -> list.add(e));
         return list;
     }
 
-    @Override
-    public void saveSpecialty(Specialty specialty) {
-        repository.save(specialty);
-    }
+//    @Override
+//    public void saveSpecialty(Specialty specialty) {
+//        repository.save(specialty);
+//    }
 }

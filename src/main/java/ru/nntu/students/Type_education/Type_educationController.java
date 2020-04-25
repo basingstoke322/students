@@ -1,4 +1,4 @@
-package ru.nntu.students;
+package ru.nntu.students.Type_education;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -1,4 +1,4 @@
-package ru.nntu.students;
+package ru.nntu.students.Specialty;
 
 import org.springframework.data.repository.CrudRepository;
 

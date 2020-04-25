@@ -4,26 +4,26 @@
 <head th:insert="~{parts/head}">
 </head>
 <head>
-    <script type="text/javascript" src="/js/type_education.js"></script>
+    <script type="text/javascript" src="/js/type_benefit.js"></script>
 </head>
 <body>
 <div>
     <center>
-        <h1>Type Education</h1>
+        <h1>Type Benefit</h1>
     </center>
     <table class="table">
         <thead>
         <tr>
             <th>id</th>
-            <th>EDUC_NAME</th>
+            <th>BENEFIT_NAME</th>
             <th>DELETE</th>
             <th>EDIT</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="teduc : ${data}">
-            <td class = "id" th:text="${teduc.id_type_education}"></td>
-            <td class = "educ_name" th:text="${teduc.educ_name}"></td>
+        <tr th:each="tbenef : ${data}">
+            <td class = "id" th:text="${tbenef.id_type_benefit}"></td>
+            <td class = "benefit_name" th:text="${tbenef.benefit_name}"></td>
             <td>
                 <button id="deleteButton" type="button" class="btn btn-primary">-</button>
             </td>
@@ -59,9 +59,9 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>EDUC_NAME:</td>
+                                    <td>BENEFIT_NAME:</td>
                                     <td>
-                                        <textarea id="txtEduc_name"></textarea>
+                                        <textarea id="txtBenefit_name"></textarea>
                                     </td>
                                 </tr>
                             </table>
