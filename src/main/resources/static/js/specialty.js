@@ -50,10 +50,18 @@ $(document).ready(function () {
         var id = $(tr).find("td.id").html();
         var spec_name = $(tr).find("td.spec_name").html();
         var spec_cost = $(tr).find("td.spec_cost").html();
-        $('#myModal').modal();
-        $("#txtId").val(id);
-        $("#txtSpec_name").val(spec_name);
-        $("#txtSpec_cost").val(spec_cost);
+
+        var modal = $('#myModal');
+        modal.modal();
+        $.ajax({
+            url: "specialty_edit",
+            data: {
+                id: id
+            },
+            success: function(answer){
+                modal.find(".modal-body").html(answer)
+            }
+        })
     });
 //populate the modal
 

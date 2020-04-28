@@ -3,15 +3,16 @@
 <head th:insert="~{parts/head}">
 </head>
 <body>
-<form th:action="@{/specialty_add}"
+<form th:action="@{/specialty}"
       th:object="${specialty}" method="POST">
+    <input type="hidden" th:field="*{id_specialty}" />
     First Name:
     <input type="text" th:field="*{spec_cost}" />
     <br/>
     Last Name:
     <input type="text" th:field="*{spec_name}" />
     <br/>
-    <input type="submit" value="Create" />
+    <input type="submit" value="Ok" />
 </form>
 </body>
 </html>

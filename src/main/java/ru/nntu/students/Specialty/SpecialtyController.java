@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class SpecialtyController {
@@ -29,9 +30,15 @@ public class SpecialtyController {
         return "specialty_add";
     }
 
-    @PostMapping("/specialty_add")
-    public String saveSpecialty(@ModelAttribute("specialty") Specialty specialty){
+    @PostMapping("/specialty")
+    public String saveSpecialty(@ModelAttribute("specialty") Specialty specialty, Model model){
         service.saveSpecialty(specialty);
+        return showAllSpecialties(model);
+    }
+
+    @GetMapping("/specialty_edit")
+    public String editSpecialty(@RequestParam("id") int id, Model model){
+        model.addAttribute("specialty", service.findById(id));
         return "specialty_add";
     }
 }

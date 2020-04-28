@@ -25,7 +25,12 @@ public class SpecialtyServiceImpl implements SpecialtyService{
     }
 
     @Override
+    public Specialty findById(int id) {
+        return repository.findById(id).get();
+    }
+
+    @Override
     public void saveSpecialty(Specialty specialty) {
-        repository.save(specialty);
+            repository.save(specialty);
     }
 }

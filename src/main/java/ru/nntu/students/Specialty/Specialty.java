@@ -35,4 +35,9 @@ public class Specialty {
     public int getActive_sign(){
         return active_sign;
     }
+
+    public void setSpec_cost(int spec_cost) { this.spec_cost = spec_cost;}
+    public void setSpec_name(String spec_name) { this.spec_name = spec_name;}
+    public void setActive_sign(int active_sign) {this.active_sign = active_sign;}
+    public void setId_specialty(int id_specialty) {this.id_specialty = id_specialty;}
 }
