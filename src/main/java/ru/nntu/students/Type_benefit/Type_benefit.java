@@ -6,24 +6,24 @@ import javax.persistence.*;
 public class Type_benefit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_type_benefit;
-    private String benefit_name;
-    private int active_sign;
+    private int idTypeBenefit;
+    private String benefitName;
+    private int activeSign;
 
     protected Type_benefit(){}
 
-    public Type_benefit(String benefit_name){
-        this.benefit_name = benefit_name;
-        this.active_sign = 1;
+    public Type_benefit(String benefitName){
+        this.benefitName = benefitName;
+        this.activeSign = 1;
     }
 
-    public int getId_type_benefit(){
-        return id_type_benefit;
+    public int getIdTypeBenefit(){
+        return idTypeBenefit;
     }
-    public String getBenefit_name(){
-        return benefit_name;
+    public String getBenefitName(){
+        return benefitName;
     }
-    public int getActive_sign(){
-        return active_sign;
+    public int getActiveSign(){
+        return activeSign;
     }
 }

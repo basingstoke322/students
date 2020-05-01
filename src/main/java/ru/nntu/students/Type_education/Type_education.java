@@ -6,24 +6,24 @@ import javax.persistence.*;
 public class Type_education {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_type_education;
-    private String educ_name;
-    private int active_sign;
+    private int idTypeEducation;
+    private String educName;
+    private int activeSign;
 
     protected Type_education(){}
 
-    public Type_education(String educ_name){
-        this.educ_name = educ_name;
-        this.active_sign = 1;
+    public Type_education(String educName){
+        this.educName = educName;
+        this.activeSign = 1;
     }
 
-    public int getId_type_education(){
-        return id_type_education;
+    public int getIdTypeEducation(){
+        return idTypeEducation;
     }
-    public String getEduc_name(){
-        return educ_name;
+    public String getEducName(){
+        return educName;
     }
-    public int getActive_sign(){
-        return active_sign;
+    public int getActiveSign(){
+        return activeSign;
     }
 }

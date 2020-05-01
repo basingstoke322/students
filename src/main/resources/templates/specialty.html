@@ -23,9 +23,9 @@
         </thead>
         <tbody>
         <tr th:each="spec : ${data}">
-            <td class="id" th:text="${spec.id_specialty}"></td>
-            <td class="spec_name" th:text="${spec.spec_name}"></td>
-            <td class="spec_cost" th:text="${spec.spec_cost}"></td>
+            <td class="id" th:text="${spec.idSpecialty}"></td>
+            <td class="spec_name" th:text="${spec.specName}"></td>
+            <td class="spec_cost" th:text="${spec.specCost}"></td>
             <td>
                 <button id="deleteButton" type="button" class="btn btn-primary">-</button>
             </td>

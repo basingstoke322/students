@@ -1,6 +1,7 @@
 package ru.nntu.students.Specialty;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -19,15 +20,15 @@ public class SpecialtyServiceImpl implements SpecialtyService{
 
     @Override
     public List getAllSpecialties() {
-        List list = new ArrayList();
-        repository.findAll().forEach(e -> list.add(e));
-        return list;
+        return repository.findAll(Sort.by(Sort.Direction.ASC, "idSpecialty"));
     }
 
     @Override
     public Specialty findById(int id) {
         return repository.findById(id).get();
     }
+
+
 
     @Override
     public void saveSpecialty(Specialty specialty) {
