@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html>
+<head th:insert="~{parts/head}">
+</head>
+<head>
+    <<!--<script type="text/javascript" src="/js/specialty.js"></script>-->>
+</head>
+<body>
+<div>
+    <center>
+        <h1>Blank</h1>
+    </center>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>idBlank</th>
+            <th>firstName</th>
+            <th>lastName</th>
+            <th>otc</th>
+            <th>bday</th>
+            <th>city</th>
+            <th>examResults</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="blank : ${data}">
+            <td class="idBlank" th:text="${blank.idBlank}"></td>
+            <td class="firstName" th:text="${blank.firstName}"></td>
+            <td class="lastName" th:text="${blank.lastName}"></td>
+            <td class="otc" th:text="${blank.otc}"></td>
+            <td class="bday" th:text="${blank.bday}"></td>
+            <td class="city" th:text="${blank.city}"></td>0
+            <td class="examResults" th:text="${blank.examResults}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editing</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>
