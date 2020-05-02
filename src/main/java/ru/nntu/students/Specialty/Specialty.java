@@ -1,8 +1,5 @@
 package ru.nntu.students.Specialty;
 
-import org.hibernate.annotations.GenericGenerator;
-
-import javax.annotation.Generated;
 import javax.persistence.*;
 
 @Entity
@@ -10,34 +7,34 @@ import javax.persistence.*;
 public class Specialty {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_specialty;
-    private String spec_name;
-    private int spec_cost;
-    private int active_sign;
+    private int idSpecialty;
+    private String specName;
+    private int specCost;
+    private int activeSign;
 
     protected Specialty(){}
 
-    public Specialty(String spec_name, int spec_cost){
-        this.spec_name = spec_name;
-        this.spec_cost = spec_cost;
-        this.active_sign = 1;
+    public Specialty(String specName, int specCost){
+        this.specName = specName;
+        this.specCost = specCost;
+        this.activeSign = 1;
     }
 
-    public int getId_specialty(){
-        return id_specialty;
+    public int getIdSpecialty(){
+        return idSpecialty;
     }
-    public int getSpec_cost(){
-        return spec_cost;
+    public int getSpecCost(){
+        return specCost;
     }
-    public String getSpec_name(){
-        return spec_name;
+    public String getSpecName(){
+        return specName;
     }
-    public int getActive_sign(){
-        return active_sign;
+    public int getActiveSign(){
+        return activeSign;
     }
 
-    public void setSpec_cost(int spec_cost) { this.spec_cost = spec_cost;}
-    public void setSpec_name(String spec_name) { this.spec_name = spec_name;}
-    public void setActive_sign(int active_sign) {this.active_sign = active_sign;}
-    public void setId_specialty(int id_specialty) {this.id_specialty = id_specialty;}
+    public void setSpecCost(int spec_cost) { this.specCost = spec_cost;}
+    public void setSpecName(String spec_name) { this.specName = spec_name;}
+    public void setActiveSign(int active_sign) {this.activeSign = active_sign;}
+    public void setIdSpecialty(int id_specialty) {this.idSpecialty = id_specialty;}
 }

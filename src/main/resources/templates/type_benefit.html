@@ -22,8 +22,8 @@
         </thead>
         <tbody>
         <tr th:each="tbenef : ${data}">
-            <td class = "id" th:text="${tbenef.id_type_benefit}"></td>
-            <td class = "benefit_name" th:text="${tbenef.benefit_name}"></td>
+            <td class = "id" th:text="${tbenef.idTypeBenefit}"></td>
+            <td class = "benefit_name" th:text="${tbenef.benefitName}"></td>
             <td>
                 <button id="deleteButton" type="button" class="btn btn-primary">-</button>
             </td>

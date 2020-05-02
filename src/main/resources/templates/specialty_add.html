@@ -5,12 +5,12 @@
 <body>
 <form th:action="@{/specialty}"
       th:object="${specialty}" method="POST">
-    <input type="hidden" th:field="*{id_specialty}" />
+    <input type="hidden" th:field="*{idSpecialty}" />
     First Name:
-    <input type="text" th:field="*{spec_cost}" />
+    <input type="text" th:field="*{specCost}" />
     <br/>
     Last Name:
-    <input type="text" th:field="*{spec_name}" />
+    <input type="text" th:field="*{specName}" />
     <br/>
     <input type="submit" value="Ok" />
 </form>
