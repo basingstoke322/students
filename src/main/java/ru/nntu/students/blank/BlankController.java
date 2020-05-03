@@ -24,13 +24,13 @@ public class BlankController {
         return "blank";
     }
 
-    @GetMapping("/BlankAdd")
+    @GetMapping("/blankAdd")
     public String addBlank(Model model){
         model.addAttribute("Blank", new Blank());
-        return "BlankAdd";
+        return "blankAdd";
     }
 
-    @PostMapping("/Blank")
+    @PostMapping("/blankAdd")
     public String saveBlank(@ModelAttribute("Blank") Blank blank, Model model){
         service.saveBlank(blank);
         return showAllBlank(model);

@@ -2,6 +2,7 @@ package ru.nntu.students.blank;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Sort;
 import ru.nntu.students.blank.Blank;
 import ru.nntu.students.blank.BlankRepository;
 import ru.nntu.students.blank.BlankService;
@@ -22,9 +23,7 @@ public class BlankServiceImpl implements BlankService {
 
     @Override
     public List getAllBlank() {
-        List list = new ArrayList();
-        repository.findAll().forEach(e -> list.add(e));
-        return list;
+        return repository.findAll(Sort.by(Sort.Direction.ASC, "idBlank"));
     }
 
     @Override

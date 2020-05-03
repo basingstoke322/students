@@ -1,17 +1,16 @@
 <!DOCTYPE HTML>
 <html lang="en" >
-<head th:insert="~{parts/head}">
+<head th:insert="~{parts/head}"xmlns:th="http://www.thymeleaf.org">
 </head>
 
 <body>
 <h1>Здраствуйте, уважаемые!</h1>
-<p>textmn nkjnkjkjkbmbmnbmnbmbm</p>
-<ul>http://localhost:8080/blank
-    <li><a href = "http://localhost:8080/specialty" >Специальности</a></li>
-    <li><a href = "http://localhost:8080/type_benefit" >type_benefits</a></li>
-    <li><a href = "http://localhost:8080/type_education" >type_education</a></li>
-    <li><a href = "http://localhost:8080/specialty_add" >specialty_add</a></li>
-    <li><a href = "http://localhost:8080/blank" >blank</a></li>
+<ul>
+    <li><a href="/specialty">Show specialties</a></li>
+    <li><a href="/specialty_add">Add specialty</a></li>
+    <li><a href="/type_benefit">Show benefits</a></li>
+    <li><a href="/type_education">Show educations</a></li>
+    <li><a href = "/blank" >blank</a></li>
 </ul>
 
 </body>
