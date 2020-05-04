@@ -36,7 +36,7 @@ public class SpecialtyController {
     @PostMapping("/specialty")
     public String saveSpecialty(@ModelAttribute("specialty") Specialty specialty, Model model){
         service.saveSpecialty(specialty);
-        return showAllSpecialties(model);
+        return "redirect:/specialty";
     }
 
     @GetMapping("/specialty_edit")

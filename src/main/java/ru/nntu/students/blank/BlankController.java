@@ -33,7 +33,7 @@ public class BlankController {
     @PostMapping("/blankAdd")
     public String saveBlank(@ModelAttribute("Blank") Blank blank, Model model){
         service.saveBlank(blank);
-        return showAllBlank(model);
+        return "redirect:/blank";
     }
 
     @GetMapping("/BlankEdit")

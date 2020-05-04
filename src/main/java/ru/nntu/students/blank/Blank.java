@@ -36,6 +36,10 @@ public class Blank {
     public String getCity(){return city;}
     public int getExamResults(){return examResults;}
     public int getActiveSign(){return activeSign;}
+    @Override
+    public String toString(){
+        return String.format("%s %s %s %s", firstName, lastName, otc, bday);
+    }
 
 
     public void setFirstName(String firstName) { this.firstName = firstName;}

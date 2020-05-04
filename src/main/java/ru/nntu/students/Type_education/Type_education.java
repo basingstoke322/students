@@ -26,4 +26,16 @@ public class Type_education {
     public int getActiveSign(){
         return activeSign;
     }
+
+    public void setActiveSign(int activeSign) {
+        this.activeSign = activeSign;
+    }
+
+    public void setEducName(String educName) {
+        this.educName = educName;
+    }
+
+    public void setIdTypeEducation(int idTypeEducation) {
+        this.idTypeEducation = idTypeEducation;
+    }
 }

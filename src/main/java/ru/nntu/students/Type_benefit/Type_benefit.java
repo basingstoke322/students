@@ -26,4 +26,21 @@ public class Type_benefit {
     public int getActiveSign(){
         return activeSign;
     }
+
+    @Override
+    public String toString(){
+        return String.format("%s" , benefitName);
+    }
+
+    public void setActiveSign(int activeSign) {
+        this.activeSign = activeSign;
+    }
+
+    public void setBenefitName(String benefitName) {
+        this.benefitName = benefitName;
+    }
+
+    public void setIdTypeBenefit(int idTypeBenefit) {
+        this.idTypeBenefit = idTypeBenefit;
+    }
 }

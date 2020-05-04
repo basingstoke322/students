@@ -51,4 +51,9 @@ public class Specialty {
     public void setIdSpecialty(int id_specialty) {
         this.idSpecialty = id_specialty;
     }
+
+    @Override
+    public String toString(){
+        return String.format("%s %d", specName, specCost);
+    }
 }
