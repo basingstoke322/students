@@ -65,6 +65,24 @@ $(document).ready(function () {
     });
 //populate the modal
 
+// add button
+    $(this).on("click", "#addButton", function () {
+        var modal = $('#myModal');
+        modal.modal();
+        $.ajax({
+            url: "specialty_add",
+            success: function(answer){
+                modal.find(".modal-body").html(answer)
+                if (modal.find("input#specCost").val() == 0){
+                    $("input#specCost").attr("value", "");
+                    $("input#specName").attr("placeholder", "input spec_name");
+                    $("input#specCost").attr("placeholder", "input spec_cost");
+                }
+            }
+        })
+    });
+//add button
+
 //save in modal edit
     $("#myModal").on("click", "#sendEdit", function () {
         $.ajax({
@@ -87,11 +105,12 @@ $(document).ready(function () {
         var id = $(tr).find("td.id").html();
         if (confirm("Delete?")) {
             $.ajax({
-                // data: {
-                //     id: id
-                // },
+                url: "specialty_delete",
+                data: {
+                    id: id
+                },
                 success: function () {
-                    alert("delete");
+                    location.reload();
                 }
             });
         }
@@ -99,11 +118,6 @@ $(document).ready(function () {
     });
 //delete button
 
-//add button
-    $(this).on("click", "#add", function () {
-        $('#myModal1').modal();
-    });
-//add button
 
 //save in modal add
     $("#myModal1").on("click", "#sendEdit", function () {

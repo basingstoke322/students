@@ -1,8 +1,13 @@
 h1{
     font-family: "Times New Roman",Times,serif;
     color:black;
+    height: 100px;
+    text-align: center;
 }
-table{
-    font-family: Georgia,Arial, Helvetica,"Times New Roman";
-    background: greenyellow;
+.table{
+    /*font-family: Georgia,Arial, Helvetica,"Times New Roman";*/
+    /*background: black;*/
+    text-align: center;
+    margin: 0 auto !important;
+    width: 1200px !important;
 }

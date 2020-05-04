@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+import java.util.Optional;
+
 @Controller
 public class SpecialtyController {
     private SpecialtyService service;
@@ -40,5 +43,11 @@ public class SpecialtyController {
     public String editSpecialty(@RequestParam("id") int id, Model model){
         model.addAttribute("specialty", service.findById(id));
         return "specialty_add";
+    }
+
+    @GetMapping("/specialty_delete")
+    public String safeDelete(@RequestParam("id") int id, Model model){
+        model.addAttribute("delete", service.safeDelete(id));
+        return "specialty";
     }
 }

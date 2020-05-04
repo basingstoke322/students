@@ -10,31 +10,45 @@ public class Specialty {
     private int idSpecialty;
     private String specName;
     private int specCost;
-    private int activeSign;
+    public int activeSign;
 
-    protected Specialty(){}
+    protected Specialty() {
+    }
 
-    public Specialty(String specName, int specCost){
+    public Specialty(String specName, int specCost) {
         this.specName = specName;
         this.specCost = specCost;
         this.activeSign = 1;
     }
 
-    public int getIdSpecialty(){
+    public int getIdSpecialty() {
         return idSpecialty;
     }
-    public int getSpecCost(){
+
+    public int getSpecCost() {
         return specCost;
     }
-    public String getSpecName(){
+
+    public String getSpecName() {
         return specName;
     }
-    public int getActiveSign(){
+
+    public int getActiveSign() {
         return activeSign;
     }
+    public void setSpecCost(int spec_cost) {
+        this.specCost = spec_cost;
+    }
 
-    public void setSpecCost(int spec_cost) { this.specCost = spec_cost;}
-    public void setSpecName(String spec_name) { this.specName = spec_name;}
-    public void setActiveSign(int active_sign) {this.activeSign = active_sign;}
-    public void setIdSpecialty(int id_specialty) {this.idSpecialty = id_specialty;}
+    public void setSpecName(String spec_name) {
+        this.specName = spec_name;
+    }
+
+    public void setActiveSign(int active_sign) {
+        this.activeSign = active_sign;
+    }
+
+    public void setIdSpecialty(int id_specialty) {
+        this.idSpecialty = id_specialty;
+    }
 }

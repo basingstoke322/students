@@ -8,29 +8,29 @@
 </head>
 <body>
 <div>
-    <center>
-        <h1>Specialty</h1>
-    </center>
-    <table class="table">
+    <div>
+        <h1>Specialty. Add specialty <button id="addButton" type="button" class="btn btn-primary">Add new spec</button></h1>
+    </div>
+    <table class="table table-bordered">
         <thead>
         <tr>
             <th>id</th>
             <th>SPEC_NAME</th>
             <th>SPEC_COST</th>
-            <th>DELETE</th>
             <th>EDIT</th>
+            <th>DELETE</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="spec : ${data}">
+        <tr th:each="spec : ${data}" >
             <td class="id" th:text="${spec.idSpecialty}"></td>
             <td class="spec_name" th:text="${spec.specName}"></td>
             <td class="spec_cost" th:text="${spec.specCost}"></td>
             <td>
-                <button id="deleteButton" type="button" class="btn btn-primary">-</button>
+                <button id="editButton" type="button" class="btn btn-primary"><i class="fas fa-1.5x fa-hand-holding-medical"></i></button>
             </td>
             <td>
-                <button id="editButton" type="button" class="btn btn-primary">+</button>
+                <button id="deleteButton" type="button" class="btn btn-primary"><i class="fas fa-1.5x fa-toilet-paper"></i></button>
             </td>
         </tr>
         </tbody>

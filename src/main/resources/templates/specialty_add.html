@@ -5,14 +5,16 @@
 <body>
 <form th:action="@{/specialty}"
       th:object="${specialty}" method="POST">
-    <input type="hidden" th:field="*{idSpecialty}" />
-    First Name:
-    <input type="text" th:field="*{specCost}" />
-    <br/>
-    Last Name:
-    <input type="text" th:field="*{specName}" />
-    <br/>
-    <input type="submit" value="Ok" />
+    <input type="hidden" th:field="*{idSpecialty}"/>
+    <div class="form-group">
+        <label>SPEC_NAME</label>
+        <input type="text" th:field="*{specName}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>SPEC_COST</label>
+        <input type="text" th:field="*{specCost}" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
 </form>
 </body>
 </html>

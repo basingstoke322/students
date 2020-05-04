@@ -7,4 +7,5 @@ public interface SpecialtyService {
     public List getAllSpecialties();
     public Specialty findById(int id);
     public void saveSpecialty(Specialty specialty);
+    int safeDelete(int id);
 }
