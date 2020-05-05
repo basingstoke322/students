@@ -5,7 +5,16 @@
 
 <body style="background-color: black;">
 <h1 style="color: white">ЗдраВствуйте, уважаемые!</h1>
-<p style="color: moccasin">Choose your destiny:</p>
+<div th:fragment="logout" class="logout" sec:authorize="isAuthenticated()">
+    Logged in user: <span sec:authentication="name"></span> |
+    Roles: <span sec:authentication="principal.authorities"></span>
+    <p style="color: moccasin">Choose your destiny:</p>
+</div>
+<div>
+    <form action="#" th:action="@{/logout}" method="post">
+        <input type="submit" value="Logout" />
+    </form>
+</div>
 <ul style="list-style-type: none; color: white">
     <li><a href="/specialty">Specialties</a></li>
     <li><a href="/type_benefit">TypeBenefits</a></li>
@@ -15,6 +24,8 @@
     <li><a href = "/entrant" >Entrants</a></li>
 </ul>
 <p style="font-size: 3.22rem; color: pink; position: absolute; bottom: 0; right: 100px;">ДИЗАЙН СТУДИИ АРТЕМИЯ ЛЕБЕДЕВА &copy;</p>
-<img src="https://2ch.hk/stickers/FypGzCAt/nbv828dP_thumb.gif" width="100" height="100" style="position: absolute; right: 0; bottom: 0;">
+<img class="img" src="https://2ch.hk/stickers/FypGzCAt/nbv828dP_thumb.gif" width="100" height="100" style="position: absolute; right: 0; bottom: 0;">
 </body>
+<script type="text/javascript">
+</script>
 </html>

@@ -19,7 +19,7 @@ public class Entrant {
     @JoinColumn(name = "id_blank")
     private Blank blank;
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "id_specialty")
     private Specialty specialty;
     @ManyToOne
     @JoinColumn(name = "id_benefits")

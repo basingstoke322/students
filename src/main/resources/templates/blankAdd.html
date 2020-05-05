@@ -5,7 +5,7 @@
 
 <body>
 <p>press F</p>
-<form th:action="@{/blank}"
+<form th:action="@{/blankAdd}"
       th:object="${Blank}" method="POST">
     <input type="hidden" th:field="*{idBlank}" />
     First Name:<br/>
@@ -18,7 +18,7 @@
     <input type="text" th:field="*{otc}" />
     <br/>
     bday:<br/>
-    <input type="text" th:field="*{bday}" />
+    <input type="date" th:field="*{bday}" />
     <br/>
     city:<br/>
     <input type="text" th:field="*{city}" />

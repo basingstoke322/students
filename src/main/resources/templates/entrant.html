@@ -9,7 +9,7 @@
 <body>
 <div>
     <div>
-        <h1>Entrants <button id="addButton" type="button" class="btn btn-primary">Add new entrant</button></h1>
+        <h1>Entrants <button id="addButton" type="button" class="btn btn-primary" sec:authorize="hasRole('ADMIN')">Add new entrant</button></h1>
     </div>
     <table class="table table-bordered">
         <thead>
