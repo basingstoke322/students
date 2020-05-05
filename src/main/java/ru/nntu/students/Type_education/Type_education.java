@@ -27,6 +27,11 @@ public class Type_education {
         return activeSign;
     }
 
+    @Override
+    public String toString(){
+        return String.format("%s" , educName);
+    }
+
     public void setActiveSign(int activeSign) {
         this.activeSign = activeSign;
     }

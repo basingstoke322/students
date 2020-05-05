@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import ru.nntu.students.Benefit.BenefitService;
 import ru.nntu.students.Specialty.SpecialtyService;
 import ru.nntu.students.Type_benefit.Type_benefitService;
 import ru.nntu.students.blank.BlankService;
@@ -16,11 +17,11 @@ public class EntrantController {
     private EntrantService entrantService;
     private BlankService blankService;
     private SpecialtyService specialtyService;
-    private Type_benefitService benefitService;
+    private BenefitService benefitService;
 
     @Autowired
     public EntrantController(EntrantService entrantService, BlankService blankService, SpecialtyService specialtyService,
-                             Type_benefitService benefitService){
+                             BenefitService benefitService){
         this.entrantService = entrantService;
         this.blankService = blankService;
         this.benefitService = benefitService;
@@ -36,7 +37,7 @@ public class EntrantController {
     @GetMapping("/entrant_add")
     public String addEntrant(Model model){
         model.addAttribute("entrant", new Entrant());
-        model.addAttribute("allBenefits", benefitService.getAllTypesBenefit());
+        model.addAttribute("allBenefits", benefitService.getAllBenefits());
         model.addAttribute("allSpecialties", specialtyService.getAllSpecialties());
         model.addAttribute("allBlanks", blankService.getAllBlank());
         return "entrant_add";
@@ -52,7 +53,7 @@ public class EntrantController {
     @GetMapping("/entrant_edit")
     public String editEntrant(@RequestParam("id") int id, Model model){
         model.addAttribute("entrant", entrantService.findById(id));
-        model.addAttribute("allBenefits", benefitService.getAllTypesBenefit());
+        model.addAttribute("allBenefits", benefitService.getAllBenefits());
         model.addAttribute("allSpecialties", specialtyService.getAllSpecialties());
         model.addAttribute("allBlanks", blankService.getAllBlank());
         return "entrant_add";

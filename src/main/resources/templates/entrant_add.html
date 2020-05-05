@@ -19,7 +19,7 @@
         <label>benefits</label>
         <select th:field="*{benefits}">
             <option th:each="type : ${allBenefits}"
-                    th:value="${type.idTypeBenefit}"
+                    th:value="${type.idBenefit}"
                     th:text="${type}"></option>
         </select>
     </div>

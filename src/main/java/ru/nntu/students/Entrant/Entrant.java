@@ -1,6 +1,7 @@
 package ru.nntu.students.Entrant;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import ru.nntu.students.Benefit.Benefit;
 import ru.nntu.students.Specialty.Specialty;
 import ru.nntu.students.Type_benefit.Type_benefit;
 import ru.nntu.students.Type_benefit.Type_benefitServiceImpl;
@@ -18,11 +19,11 @@ public class Entrant {
     @JoinColumn(name = "id_blank")
     private Blank blank;
     @ManyToOne
-    @JoinColumn(name = "id_specialty")
+    @JoinColumn(name = "id")
     private Specialty specialty;
     @ManyToOne
     @JoinColumn(name = "id_benefits")
-    private Type_benefit benefits;
+    private Benefit benefits;
     private int activeSign;
 
     public Entrant(){
@@ -39,7 +40,7 @@ public class Entrant {
 
     public Specialty getSpecialty() { return specialty;}
 
-    public Type_benefit getBenefits() {return benefits;}
+    public Benefit getBenefits() {return benefits;}
 
     public int getIdEntrant() {return idEntrant;}
 
@@ -47,7 +48,7 @@ public class Entrant {
         this.activeSign = activeSign;
     }
 
-    public void setBenefits(Type_benefit benefits) {
+    public void setBenefits(Benefit benefits) {
         this.benefits = benefits;
     }
 

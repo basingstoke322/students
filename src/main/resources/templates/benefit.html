@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html>
+<head th:insert="~{parts/head}">
+</head>
+<head>
+<body>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>education</th>
+        <th>benefits</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="ben : ${data}" >
+        <td class="id" th:text="${ben.idBenefit}"></td>
+        <td class="benefit_education" th:text="${ben.education}"></td>
+        <td class="benefit_benefit" th:text="${ben.benefits}"></td>
+        <td>
+            <button id="editButton" type="button" class="btn btn-primary"><i class="fas fa-1.5x fa-hand-holding-medical"></i></button>
+        </td>
+        <td>
+            <button id="deleteButton" type="button" class="btn btn-primary"><i class="fas fa-1.5x fa-toilet-paper"></i></button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
