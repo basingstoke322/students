@@ -37,7 +37,7 @@ public class BenefitController {
     public String addBenefit(Model model){
         model.addAttribute("benefit", new Benefit());
         model.addAttribute("allTBenefits", tbenefitService.getAllTypesBenefit());
-        model.addAttribute("allTEducation", teducationService.getAllTypesEducation());
+        model.addAttribute("allTEducation", teducationService.getAllTypeEducation());
         return "benefit_add";
     }
 
@@ -51,7 +51,7 @@ public class BenefitController {
     public String editBenefit(@RequestParam("id") int id, Model model){
         model.addAttribute("benefit", benefitService.findById(id));
         model.addAttribute("allTBenefits", tbenefitService.getAllTypesBenefit());
-        model.addAttribute("allTEducation", teducationService.getAllTypesEducation());
+        model.addAttribute("allTEducation", teducationService.getAllTypeEducation());
         return "benefit_add";
     }
 

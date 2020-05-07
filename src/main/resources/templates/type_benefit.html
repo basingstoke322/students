@@ -16,8 +16,8 @@
         <tr>
             <th>id</th>
             <th>BENEFIT_NAME</th>
-            <th sec:authorize="hasRole('ADMIN')">DELETE</th>
             <th sec:authorize="hasRole('ADMIN')">EDIT</th>
+            <th sec:authorize="hasRole('ADMIN')">DELETE</th>
         </tr>
         </thead>
         <tbody>
@@ -25,10 +25,10 @@
             <td class = "id" th:text="${tbenef.idTypeBenefit}"></td>
             <td class = "benefitName" th:text="${tbenef.benefitName}"></td>
             <td sec:authorize="hasRole('ADMIN')">
-                <button id="deleteButton" type="button" class="btn btn-primary">-</button>
+                <button id="editButton" type="button" class="btn btn-primary"><i class="fas fa-1.5x fa-hand-holding-medical"></i></button>
             </td>
             <td sec:authorize="hasRole('ADMIN')">
-                <button id="editButton" type="button" class="btn btn-primary">+</button>
+                <button id="deleteButton" type="button" class="btn btn-primary"><i class="fas fa-1.5x fa-toilet-paper"></i></button>
             </td>
         </tr>
         </tbody>
