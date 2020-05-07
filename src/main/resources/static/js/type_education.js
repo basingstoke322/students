@@ -48,19 +48,47 @@ $(document).ready(function () {
     $(this).on("click", "#editButton", function () {
         var tr = $(this).closest("tr");
         var id = $(tr).find("td.id").html();
-        var educ_name = $(tr).find("td.educ_name").html();
-        $('#myModal').modal();
-        $("#txtId").val(id);
-        $("#txtEduc_name").val(educ_name);
+        var educName = $(tr).find("td.educ_name").html();
+
+        var modal = $('#myModal');
+        modal.modal();
+        $.ajax({
+            url: "type_education_edit",
+            data: {
+                id: id
+            },
+            success: function(answer){
+                modal.find(".modal-body").html(answer)
+            }
+        })
     });
 //populate the modal
+
+// add button
+    $(this).on("click", "#addButton", function () {
+        var modal = $('#myModal');
+        modal.modal();
+        $.ajax({
+            url: "type_education_add",
+            success: function(answer){
+                modal.find(".modal-body").html(answer)
+
+                    $("input#educName").attr("value", "");
+                    $("input#educName").attr("placeholder", "input educName");
+
+            }
+        })
+    });
+//add button
 
 //save in modal edit
     $("#myModal").on("click", "#sendEdit", function () {
         $.ajax({
             data: {
                 id: $("#txtId").val(),
-                ben: $("#txtEduc_name").val()
+                fio: $("#txtFio").val(),
+                spec: $("#txtSpec").val(),
+                ben: $("#txtBen").val()
             },
             success: function () {
                 alert("save edit");
@@ -75,11 +103,12 @@ $(document).ready(function () {
         var id = $(tr).find("td.id").html();
         if (confirm("Delete?")) {
             $.ajax({
-                // data: {
-                //     id: id
-                // },
+                url: "type_education_delete",
+                data: {
+                    id: id
+                },
                 success: function () {
-                    alert("delete");
+                    location.reload();
                 }
             });
         }
@@ -87,13 +116,8 @@ $(document).ready(function () {
     });
 //delete button
 
-//add button
-    $(this).on("click", "#add", function () {
-        $('#myModal1').modal();
-    });
-//add button
 
-//save in modal addtxtEduc_name
+//save in modal add
     $("#myModal1").on("click", "#sendEdit", function () {
         $.ajax({
             url: "search.html",
@@ -109,6 +133,7 @@ $(document).ready(function () {
         });
     });
 //save in modal add
+
 
 
 })

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <html>
 <head th:insert="~{parts/head}">
 </head>
@@ -9,25 +9,25 @@
 <body>
 <div>
     <center>
-        <h1>Type Education</h1>
+        <h1>Type Education<button id="addButton" type="button" class="btn btn-primary" sec:authorize="hasRole('ADMIN')">Add new education</button></h1>
     </center>
-    <table class="table">
+    <table class="table table-bordered">
         <thead>
         <tr>
             <th>id</th>
             <th>EDUC_NAME</th>
-            <th>DELETE</th>
-            <th>EDIT</th>
+            <th sec:authorize="hasRole('ADMIN')">DELETE</th>
+            <th sec:authorize="hasRole('ADMIN')">EDIT</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="teduc : ${data}">
             <td class = "id" th:text="${teduc.idTypeEducation}"></td>
             <td class = "educ_name" th:text="${teduc.educName}"></td>
-            <td>
+            <td sec:authorize="hasRole('ADMIN')">
                 <button id="deleteButton" type="button" class="btn btn-primary">-</button>
             </td>
-            <td>
+            <td sec:authorize="hasRole('ADMIN')">
                 <button id="editButton" type="button" class="btn btn-primary">+</button>
             </td>
         </tr>
@@ -38,7 +38,46 @@
 </body>
 
 
-<!-- Modal -->
+<!--&lt;!&ndash; Modal &ndash;&gt;-->
+<!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--    <div class="modal-dialog" role="document">-->
+<!--        <div class="modal-content">-->
+<!--            <div class="modal-header">-->
+<!--                <h5 class="modal-title" id="exampleModalLabel">Editing</h5>-->
+<!--                <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--                    <span aria-hidden="true">&times;</span>-->
+<!--                </button>-->
+<!--            </div>-->
+<!--            <div class="modal-body">-->
+<!--                <form>-->
+<!--                    <fieldset>-->
+<!--                        <center>-->
+<!--                            <table cellspacing="15">-->
+<!--                                <tr>-->
+<!--                                    <td>ID:</td>-->
+<!--                                    <td>-->
+<!--                                        <textarea id="txtId"></textarea>-->
+<!--                                    </td>-->
+<!--                                </tr>-->
+<!--                                <tr>-->
+<!--                                    <td>EDUC_NAME:</td>-->
+<!--                                    <td>-->
+<!--                                        <textarea id="txtEduc_name"></textarea>-->
+<!--                                    </td>-->
+<!--                                </tr>-->
+<!--                            </table>-->
+<!--                            <br/>-->
+<!--                        </center>-->
+<!--                    </fieldset>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--            <div class="modal-footer">-->
+<!--                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+<!--                <button id="sendEdit" type="button" class="btn btn-primary">Save changes</button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -49,34 +88,9 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
-                    <fieldset>
-                        <center>
-                            <table cellspacing="15">
-                                <tr>
-                                    <td>ID:</td>
-                                    <td>
-                                        <textarea id="txtId"></textarea>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>EDUC_NAME:</td>
-                                    <td>
-                                        <textarea id="txtEduc_name"></textarea>
-                                    </td>
-                                </tr>
-                            </table>
-                            <br/>
-                        </center>
-                    </fieldset>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button id="sendEdit" type="button" class="btn btn-primary">Save changes</button>
+
             </div>
         </div>
     </div>
 </div>
-
 </html>

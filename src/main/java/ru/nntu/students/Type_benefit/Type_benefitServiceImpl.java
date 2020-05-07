@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -19,13 +18,22 @@ public class Type_benefitServiceImpl implements Type_benefitService{
 
     @Override
     public List getAllTypesBenefit() {
-        List list = new ArrayList();
-        repository.findAll().forEach(e -> list.add(e));
-        return list;
+        return repository.findAll();
     }
 
-//    @Override
-//    public void saveSpecialty(Specialty specialty) {
-//        repository.save(specialty);
-//    }
+    @Override
+    public Type_benefit findById(int id) {
+        return repository.findById(id).get();
+    }
+
+    @Override
+    public int safeDelete(int id) {
+        return repository.safeDelete(id);
+    }
+
+    @Override
+    public void saveTypeBenefit(Type_benefit type_benefit)  {
+        repository.save(type_benefit);
+    }
+
 }
