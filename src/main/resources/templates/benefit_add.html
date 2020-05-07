@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{parts/head}">
+</head>
+<body>
+<form th:action="@{/benefit}"
+      th:object="${benefit}" method="POST">
+    <input type="hidden" th:field="*{idBenefit}"/>
+    <input type="hidden" th:field="*{activeSign}"/>
+    <div class="form-group">
+        <label>TYPE_BENEFITS</label>
+        <select class="form-control" th:field="*{benefits}">
+            <option th:each="type : ${allTBenefits}"
+                    th:value="${type.idTypeBenefit}"
+                    th:text="${type}"></option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>TYPE_SPECIALTY</label>
+        <select class="form-control" th:field="*{education}">
+            <option th:each="type : ${allTEducation}"
+                    th:value="${type.idTypeEducation}"
+                    th:text="${type}"></option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+</form>
+</body>
+</html>

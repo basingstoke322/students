@@ -23,7 +23,7 @@ public class BlankServiceImpl implements BlankService {
 
     @Override
     public List getAllBlank() {
-        return repository.findAll(Sort.by(Sort.Direction.ASC, "idBlank"));
+        return repository.findAll();
     }
 
     @Override
@@ -34,5 +34,9 @@ public class BlankServiceImpl implements BlankService {
     @Override
     public void saveBlank(Blank blank) {
         repository.save(blank);
+    }
+    @Override
+    public int safeDelete(int id) {
+        return repository.safeDelete(id);
     }
 }

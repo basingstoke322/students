@@ -19,14 +19,14 @@ public class Entrant {
     @JoinColumn(name = "id_blank")
     private Blank blank;
     @ManyToOne
-    @JoinColumn(name = "id_specialty")
+    @JoinColumn(name = "id")
     private Specialty specialty;
     @ManyToOne
     @JoinColumn(name = "id_benefits")
     private Benefit benefits;
     private int activeSign;
 
-    public Entrant(){
+    public Entrant() {
         this.activeSign = 1;
     }
 
@@ -38,11 +38,17 @@ public class Entrant {
         return blank;
     }
 
-    public Specialty getSpecialty() { return specialty;}
+    public Specialty getSpecialty() {
+        return specialty;
+    }
 
-    public Benefit getBenefits() {return benefits;}
+    public Benefit getBenefits() {
+        return benefits;
+    }
 
-    public int getIdEntrant() {return idEntrant;}
+    public int getIdEntrant() {
+        return idEntrant;
+    }
 
     public void setActiveSign(int activeSign) {
         this.activeSign = activeSign;

@@ -4,12 +4,16 @@
 <head th:insert="~{parts/head}">
 </head>
 <head>
-    <!--<script type="text/javascript" src="/js/specialty.js"></script>-->
+        <script type="text/javascript" src="/js/blank.js"></script>
 </head>
 <body>
 <div>
     <center>
-        <h1>Blank</h1>
+        <h1>Blank
+            <button id="addButton" type="button" class="btn btn-primary" sec:authorize="hasRole('ADMIN')">Add new
+                blank
+            </button>
+        </h1>
     </center>
     <table class="table">
         <thead>
@@ -21,6 +25,8 @@
             <th>bday</th>
             <th>city</th>
             <th>examResults</th>
+            <th sec:authorize="hasRole('ADMIN')">EDIT</th>
+            <th sec:authorize="hasRole('ADMIN')">DELETE</th>
         </tr>
         </thead>
         <tbody>
@@ -32,16 +38,37 @@
             <td class="bday" th:text="${blank.bday}"></td>
             <td class="city" th:text="${blank.city}"></td>
             <td class="examResults" th:text="${blank.examResults}"></td>
+            <td sec:authorize="hasRole('ADMIN')">
+                <button id="editButton" type="button" class="btn btn-primary"><i
+                        class="fas fa-1.5x fa-hand-holding-medical"></i></button>
+            </td>
+            <td sec:authorize="hasRole('ADMIN')">
+                <button id="deleteButton" type="button" class="btn btn-primary"><i
+                        class="fas fa-1.5x fa-toilet-paper"></i></button>
+            </td>
         </tr>
         </tbody>
     </table>
-    <a href="/blankAdd">Добавить</a>
+<!--    <a href="/blankAdd">Добавить</a>-->
 </div>
 <footer th:insert="~{parts/footer}"></footer>
 </body>
 
-
 <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" style="width:600px !important;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editing</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
 
+            </div>
+        </div>
+    </div>
+</div>
 
 </html>

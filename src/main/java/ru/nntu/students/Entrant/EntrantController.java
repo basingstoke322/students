@@ -45,7 +45,6 @@ public class EntrantController {
 
     @PostMapping("/entrant")
     public String saveEntrant(@ModelAttribute("entrant") Entrant entrant, Model model){
-        System.out.println(entrant.getBenefits());
         entrantService.saveEntrant(entrant);
         return "redirect:/entrant";
     }
