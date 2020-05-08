@@ -1,31 +1,51 @@
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:insert="~{parts/head}"xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{parts/head}">
 </head>
 
-<body style="background-color: black;">
-<h1 style="color: white">ЗдраВствуйте, уважаемые!</h1>
-<div th:fragment="logout" class="logout" sec:authorize="isAuthenticated()">
-    Logged in user: <span sec:authentication="name"></span> |
-    Roles: <span sec:authentication="principal.authorities"></span>
-    <p style="color: moccasin">Choose your destiny:</p>
+<body class="container">
+<div th:fragment="logout" class="logout row" sec:authorize="isAuthenticated()" style="padding-top: 1rem;">
+    <div class="col">
+        <div class="row" style="float: right; width: 400px;">
+            <div class="col-7">
+                <p style="padding-top: 6px;">Добро пожаловать,  <span sec:authentication="name"></span>!</p>
+            </div>
+            <div class="col-5">
+                <form action="#" th:action="@{/logout}" method="post">
+                    <button type="submit" class="btn btn-outline-primary">Выйти</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
-<div>
-    <form action="#" th:action="@{/logout}" method="post">
-        <input type="submit" value="Logout" />
-    </form>
+<div class="row">
+    <ul class="list-group">
+        <li class="list-group-item"><a href="/specialty">Специальности</a></li>
+        <li class="list-group-item"><a href="/type_benefit">Виды привелегий</a></li>
+        <li class="list-group-item"><a href="/type_education">Виды образования</a></li>
+        <li class="list-group-item"><a href="/benefit">Привелегии</a></li>
+        <li class="list-group-item"><a href="/blank" >Бланки</a></li>
+        <li class="list-group-item"><a href="/entrant" >Абитуриенты</a></li>
+    </ul>
 </div>
-<ul style="list-style-type: none; color: white">
-    <li><a href="/specialty">Specialties</a></li>
-    <li><a href="/type_benefit">TypeBenefits</a></li>
-    <li><a href="/type_education">TypeEducations</a></li>
-    <li><a href="/benefit">Benefit</a></li>
-    <li><a href = "/blank" >Blanks</a></li>
-    <li><a href = "/entrant" >Entrants</a></li>
-</ul>
-<p style="font-size: 3.22rem; color: pink; position: absolute; bottom: 0; right: 100px;">ДИЗАЙН СТУДИИ АРТЕМИЯ ЛЕБЕДЕВА &copy;</p>
-<img class="img" src="https://2ch.hk/stickers/FypGzCAt/nbv828dP_thumb.gif" width="100" height="100" style="position: absolute; right: 0; bottom: 0;">
-</body>
+<style>
+    a:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+    a {
+        color: inherit;
+    }
+    li:hover {
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+    }
+</style>
 <script type="text/javascript">
+    $(document).on("click", "li", function () {
+        window.location.href = $(this).find("a").attr("href");
+    })
 </script>
+</body>
 </html>
