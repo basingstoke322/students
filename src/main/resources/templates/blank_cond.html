@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="~{parts/head}"></head>
+
+<body>
+<form id="myForm" th:action="@{/blank_cond}">
+    <div class="form-group">
+        <label>BLANK CHOICE</label> </br>
+        <button id="blank" type="button" class="btn btn-primary">BLANK</button>
+    </div>
+    <div class="form-group">
+        <label>CREATE NEW BLANK</label> </br>
+        <button id="new_blank" type="button" class="btn btn-primary">NEW_BLANK</button>
+    </div>
+    <br/>
+</form>
+</body>
+</html>

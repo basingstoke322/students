@@ -34,6 +34,12 @@ public class EntrantController {
         return "entrant";
     }
 
+    @GetMapping("/blank_cond")
+    public String blankCondition(Model model) {
+        model.addAttribute("allBlanks", blankService.getAllBlank());
+        return "blank_cond";
+    }
+
     @GetMapping("/entrant_add")
     public String addEntrant(Model model){
         model.addAttribute("entrant", new Entrant());
