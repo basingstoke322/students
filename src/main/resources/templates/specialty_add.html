@@ -3,7 +3,7 @@
 <head th:insert="~{parts/head}">
 </head>
 <body>
-<form th:action="@{/specialty}"
+<form id="myForm" th:action="@{/specialty}"
       th:object="${specialty}" method="POST">
     <input type="hidden" th:field="*{idSpecialty}"/>
     <div class="form-group">

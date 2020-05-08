@@ -7,6 +7,12 @@ $(document).ready(function () {
             url: "blankAddGet",
             success: function (answer) {
                 modal.find(".modal-body").html(answer)
+                $("input#examResults").on("keypress keyup blur", function (event) {
+                    $(this).val($(this).val().replace(/[^\d].+/, ""));
+                    if ((event.which < 48 || event.which > 57)) {
+                        event.preventDefault();
+                    }
+                });
                 $('#myForm').submit(function (e) {
                     e.preventDefault();
                     if (
