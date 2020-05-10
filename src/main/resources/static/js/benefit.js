@@ -13,6 +13,7 @@ $(document).ready(function () {
             },
             success: function(answer){
                 modal.find(".modal-body").html(answer)
+                $("#exampleModalLabel").text("Изменить");
             }
         })
     });
@@ -26,6 +27,7 @@ $(document).ready(function () {
             url: "benefit_add",
             success: function(answer){
                 modal.find(".modal-body").html(answer)
+                $("#exampleModalLabel").text("Добавить");
             }
         })
     });
@@ -35,7 +37,7 @@ $(document).ready(function () {
     $(this).on("click", "#deleteButton", function () {
         var tr = $(this).closest("tr");
         var id = $(tr).find("td.id").html();
-        if (confirm("Delete?")) {
+        if (confirm("Удалить данную запись?")) {
             $.ajax({
                 url: "benefit_delete",
                 data: {

@@ -8,32 +8,31 @@
           th:object="${Blank}" method="POST">
         <input type="hidden" th:field="*{idBlank}"/>
         <div class="form-group">
-            <label>FIRST_NAME</label>
+            <label>Имя</label>
             <input type="text" th:field="*{firstName}" class="form-control">
         </div>
         <div class="form-group">
-            <label>LAST_NAME</label>
+            <label>Фамилия</label>
             <input type="text" th:field="*{lastName}" class="form-control">
         </div>
         <div class="form-group">
-            <label>OTC</label>
+            <label>Отчество</label>
             <input type="text" th:field="*{otc}" class="form-control">
         </div>
         <div class="form-group">
-            <label>BDAY</label>
+            <label>Дата рождения</label>
             <input type="date" th:field="*{bday}" class="form-control">
         </div>
         <div class="form-group">
-            <label>CITY</label>
+            <label>Город проживания</label>
             <input type="text" th:field="*{city}" class="form-control">
         </div>
         <div class="form-group">
-            <label>EXAM_RESULTS</label>
+            <label>Результаты экзаменов</label>
             <input type="text" th:field="*{examResults}" class="form-control">
         </div>
         <br/>
-<!--        <input type="submit" value="Ok"/>-->
-        <button type="submit" class="btn btn-primary">Send</button>
+        <button type="submit" class="btn btn-primary">Отправить</button>
     </form>
 </body>
 </html>

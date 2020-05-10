@@ -5,23 +5,23 @@
 </head>
 <head>
     <script type="text/javascript" src="/js/benefit.js"></script>
+    <title>Привилегии</title>
 </head>
 <body>
 <div>
-    <h1>Benefits
-        <button id="addButton" type="button" class="btn btn-primary" sec:authorize="hasRole('ADMIN')">Add new
-            benefit
+    <h1>Привилегии <br/> Добавить новую привилегию
+        <button id="addButton" type="button" class="btn btn-primary" sec:authorize="hasRole('ADMIN')">Добавить
         </button>
-    </h1>
+    </h1><br/>
 </div>
 <table class="table table-bordered">
     <thead>
     <tr>
-        <th>id</th>
-        <th>education</th>
-        <th>benefits</th>
-        <th sec:authorize="hasRole('ADMIN')">EDIT</th>
-        <th sec:authorize="hasRole('ADMIN')">DELETE</th>
+        <th></th>
+        <th>Виды образования</th>
+        <th>Виды привилегий</th>
+        <th sec:authorize="hasRole('ADMIN')">Изменить</th>
+        <th sec:authorize="hasRole('ADMIN')">Удалить</th>
     </tr>
     </thead>
     <tbody>

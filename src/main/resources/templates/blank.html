@@ -4,29 +4,29 @@
 <head th:insert="~{parts/head}">
 </head>
 <head>
-        <script type="text/javascript" src="/js/blank.js"></script>
+    <script type="text/javascript" src="/js/blank.js"></script>
+    <title>Анкеты</title>
 </head>
 <body>
 <div>
-    <center>
-        <h1>Blank
-            <button id="addButton" type="button" class="btn btn-primary" sec:authorize="hasRole('ADMIN')">Add new
-                blank
+    <div style="text-align: center;">
+        <h1>Анкеты <br/> Добавить новую анкету
+            <button id="addButton" type="button" class="btn btn-primary" sec:authorize="hasRole('ADMIN')">Добавить
             </button>
-        </h1>
-    </center>
+        </h1><br/>
+    </div>
     <table class="table">
         <thead>
         <tr>
-            <th>idBlank</th>
-            <th>firstName</th>
-            <th>lastName</th>
-            <th>otc</th>
-            <th>bday</th>
-            <th>city</th>
-            <th>examResults</th>
-            <th sec:authorize="hasRole('ADMIN')">EDIT</th>
-            <th sec:authorize="hasRole('ADMIN')">DELETE</th>
+            <th></th>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Отчество</th>
+            <th>Дата рождения</th>
+            <th>Город проживания</th>
+            <th>Результаты экзаменов</th>
+            <th sec:authorize="hasRole('ADMIN')">Изменить</th>
+            <th sec:authorize="hasRole('ADMIN')">Удалить</th>
         </tr>
         </thead>
         <tbody>
@@ -49,7 +49,6 @@
         </tr>
         </tbody>
     </table>
-<!--    <a href="/blankAdd">Добавить</a>-->
 </div>
 <footer th:insert="~{parts/footer}"></footer>
 </body>

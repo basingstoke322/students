@@ -6,9 +6,9 @@
 <body class="container">
 <div th:fragment="logout" class="logout row" sec:authorize="isAuthenticated()" style="padding-top: 1rem;">
     <div class="col">
-        <div class="row" style="float: right; width: 400px;">
+        <div class="row" style="float: right; width: 420px;">
             <div class="col-7">
-                <p style="padding-top: 6px;">Добро пожаловать,  <span sec:authentication="name"></span>!</p>
+                <p style="padding-top: 6px; width: 250px;">Добро пожаловать,  <span sec:authentication="name"></span>!</p>
             </div>
             <div class="col-5">
                 <form action="#" th:action="@{/logout}" method="post">
@@ -21,10 +21,10 @@
 <div class="row">
     <ul class="list-group">
         <li class="list-group-item"><a href="/specialty">Специальности</a></li>
-        <li class="list-group-item"><a href="/type_benefit">Виды привелегий</a></li>
+        <li class="list-group-item"><a href="/type_benefit">Виды привилегий</a></li>
         <li class="list-group-item"><a href="/type_education">Виды образования</a></li>
-        <li class="list-group-item"><a href="/benefit">Привелегии</a></li>
-        <li class="list-group-item"><a href="/blank" >Бланки</a></li>
+        <li class="list-group-item"><a href="/benefit">Привилегии</a></li>
+        <li class="list-group-item"><a href="/blank" >Анкеты</a></li>
         <li class="list-group-item"><a href="/entrant" >Абитуриенты</a></li>
     </ul>
 </div>

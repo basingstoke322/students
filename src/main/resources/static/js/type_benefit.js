@@ -12,6 +12,7 @@ $(document).ready(function () {
             },
             success: function (answer) {
                 modal.find(".modal-body").html(answer)
+                $("#exampleModalLabel").text("Изменить");
             }
         })
     });
@@ -25,8 +26,9 @@ $(document).ready(function () {
             url: "type_benefit_add",
             success: function (answer) {
                 modal.find(".modal-body").html(answer)
+                $("#exampleModalLabel").text("Добавить");
                     $("input#benefitName").attr("value", "");
-                    $("input#benefitName").attr("placeholder", "input benefitName");
+                    $("input#benefitName").attr("placeholder", "Наименование");
                 $('#myForm').submit(function (e) {
                     e.preventDefault();
                     if (
@@ -52,7 +54,7 @@ $(document).ready(function () {
     $(this).on("click", "#deleteButton", function () {
         var tr = $(this).closest("tr");
         var id = $(tr).find("td.id").html();
-        if (confirm("Delete?")) {
+        if (confirm("Удалить данную запись?")) {
             $.ajax({
                 url: "type_benefit_delete",
                 data: {

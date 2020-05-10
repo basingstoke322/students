@@ -4,21 +4,22 @@
 <head th:insert="~{parts/head}">
 </head>
 <head>
+    <title>Специальности</title>
     <script type="text/javascript" src="/js/specialty.js"></script>
 </head>
 <body>
 <div>
     <div>
-        <h1>Specialty. Add specialty <button id="addButton" type="button" class="btn btn-primary" sec:authorize="hasRole('ADMIN')">Add new spec</button></h1>
+        <h1>Специальности. <br/> Добавить новую специальность. <button id="addButton" type="button" class="btn btn-primary" sec:authorize="hasRole('ADMIN')">Добавить</button></h1><br/>
     </div>
     <table class="table table-bordered">
         <thead>
         <tr>
-            <th>id</th>
-            <th>SPEC_NAME</th>
-            <th>SPEC_COST</th>
-            <th sec:authorize="hasRole('ADMIN')">EDIT</th>
-            <th sec:authorize="hasRole('ADMIN')">DELETE</th>
+            <th></th>
+            <th>Наименование специальности</th>
+            <th>Стоимость специальности</th>
+            <th sec:authorize="hasRole('ADMIN')">Изменить</th>
+            <th sec:authorize="hasRole('ADMIN')">Удалить</th>
         </tr>
         </thead>
         <tbody>

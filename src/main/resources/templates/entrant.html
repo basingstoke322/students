@@ -5,27 +5,27 @@
 </head>
 <head>
     <script type="text/javascript" src="/js/entrant.js"></script>
+    <title>Абитуриенты</title>
 </head>
 <body>
 <div>
     <div>
-        <h1>Entrants
-            <button id="addButton" type="button" class="btn btn-primary" sec:authorize="hasRole('ADMIN')">Add new
-                entrant
+        <h1>Абитуриенты <br/> Добавить нового абитуриента
+            <button id="addButton" type="button" class="btn btn-primary" sec:authorize="hasRole('ADMIN')">Добавить
             </button>
-        </h1>
+        </h1> <br/>
     </div>
     <table class="table table-bordered">
         <thead>
         <tr>
-            <th>id</th>
-            <th>type_education</th>
-            <th>type_benefit</th>
-            <th>fio</th>
-            <th>specialty_name</th>
-            <th>specialty_cost</th>
-            <th sec:authorize="hasRole('ADMIN')">EDIT</th>
-            <th sec:authorize="hasRole('ADMIN')">DELETE</th>
+            <th></th>
+            <th>Вид образования</th>
+            <th>Вид привилегии</th>
+            <th>Ф И О</th>
+            <th>Наименование специальности</th>
+            <th>Стоимость специальности</th>
+            <th sec:authorize="hasRole('ADMIN')">Изменить</th>
+            <th sec:authorize="hasRole('ADMIN')">Удалить</th>
         </tr>
         </thead>
         <tbody>

@@ -12,6 +12,7 @@ $(document).ready(function () {
             },
             success: function(answer){
                 modal.find(".modal-body").html(answer)
+                $("#exampleModalLabel").text("Изменить");
             }
         })
     });
@@ -25,8 +26,9 @@ $(document).ready(function () {
             url: "type_education_add",
             success: function(answer){
                 modal.find(".modal-body").html(answer)
+                $("#exampleModalLabel").text("Добавить");
                     $("input#educName").attr("value", "");
-                    $("input#educName").attr("placeholder", "input educName");
+                    $("input#educName").attr("placeholder", "Наименование");
                 $('#myForm').submit(function (e) {
                     e.preventDefault();
                     if (
@@ -48,27 +50,11 @@ $(document).ready(function () {
     });
 //add button
 
-//save in modal edit
-    $("#myModal").on("click", "#sendEdit", function () {
-        $.ajax({
-            data: {
-                id: $("#txtId").val(),
-                fio: $("#txtFio").val(),
-                spec: $("#txtSpec").val(),
-                ben: $("#txtBen").val()
-            },
-            success: function () {
-                alert("save edit");
-            }
-        });
-    });
-//save in modal edit
-
 //delete button
     $(this).on("click", "#deleteButton", function () {
         var tr = $(this).closest("tr");
         var id = $(tr).find("td.id").html();
-        if (confirm("Delete?")) {
+        if (confirm("Удалить данную запись?")) {
             $.ajax({
                 url: "type_education_delete",
                 data: {
@@ -82,25 +68,4 @@ $(document).ready(function () {
 
     });
 //delete button
-
-
-//save in modal add
-    $("#myModal1").on("click", "#sendEdit", function () {
-        $.ajax({
-            url: "search.html",
-            data: {
-                id: $("#txtId").val(),
-                fio: $("#txtFio").val(),
-                spec: $("#txtSpec").val(),
-                ben: $("#txtBen").val()
-            },
-            success: function () {
-                alert("save add");
-            }
-        });
-    });
-//save in modal add
-
-
-
 })

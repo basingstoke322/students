@@ -12,6 +12,7 @@ $(document).ready(function () {
             },
             success: function (answer) {
                 modal.find(".modal-body").html(answer)
+                $("#exampleModalLabel").text("Изменить");
             }
         })
     });
@@ -25,10 +26,11 @@ $(document).ready(function () {
             url: "specialty_add",
             success: function (answer) {
                 modal.find(".modal-body").html(answer)
+                $("#exampleModalLabel").text("Добавить");
                 if (modal.find("input#specCost").val() == 0) {
                     $("input#specCost").attr("value", "");
-                    $("input#specName").attr("placeholder", "input spec_name");
-                    $("input#specCost").attr("placeholder", "input spec_cost");
+                    $("input#specName").attr("placeholder", "Наименование");
+                    $("input#specCost").attr("placeholder", "Стоимость");
                 }
                 $("input#specCost").on("keypress keyup blur", function (event) {
                     $(this).val($(this).val().replace(/[^\d].+/, ""));
@@ -64,7 +66,7 @@ $(document).ready(function () {
     $(this).on("click", "#deleteButton", function () {
         var tr = $(this).closest("tr");
         var id = $(tr).find("td.id").html();
-        if (confirm("Delete?")) {
+        if (confirm("Удалить данную запись?")) {
             $.ajax({
                 url: "specialty_delete",
                 data: {

@@ -50,6 +50,7 @@ $(document).ready(function () {
             url: "blank_cond",
             success: function (answer) {
                 modal.find(".modal-body").html(answer);
+                $("#exampleModalLabel").text("Добавить");
                 $('button#blank').click(function () {
                     $.ajax({
                         url: "entrant_add",
@@ -74,7 +75,7 @@ $(document).ready(function () {
                         url: "blankAddGet",
                         method: "GET",
                         success: function (answer) {
-                            $("#exampleModalLabel").text("ADDITING");
+                            $("#exampleModalLabel").text("Добавить");
                             modal.find(".modal-body").html(answer)
                             $("input#examResults").on("keypress keyup blur", function (event) {
                                 $(this).val($(this).val().replace(/[^\d].+/, ""));
@@ -130,7 +131,7 @@ $(document).ready(function () {
     $(this).on("click", "#deleteButton", function () {
         var tr = $(this).closest("tr");
         var id = $(tr).find("td.id").html();
-        if (confirm("Delete?")) {
+        if (confirm("Удалить данную запись?")) {
             $.ajax({
                 url: "entrant_delete",
                 data: {

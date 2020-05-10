@@ -7,10 +7,9 @@
       th:object="${entrant}" method="POST">
     <input type="hidden" th:field="*{idEntrant}"/>
     <input type="hidden" th:field="*{activeSign}"/>
-<!--    <input type="text" id="idBlank" th:field="*{blank.idBlank}"/>-->
     <div id="myDiv"></div>
     <div class="form-group" id="divBlank">
-        <label>BLANKS</label>
+        <label>Анкеты</label>
         <select class="form-control" th:field="*{blank}">
             <option id="idBlank" th:each="type : ${allBlanks}"
                     th:value="${type.idBlank}"
@@ -18,7 +17,7 @@
         </select>
     </div>
     <div class="form-group">
-        <label>BENEFITS</label>
+        <label>Привилегии</label>
         <select class="form-control" th:field="*{benefits}">
             <option th:each="type : ${allBenefits}"
                     th:value="${type.idBenefit}"
@@ -26,14 +25,14 @@
         </select>
     </div>
     <div class="form-group">
-        <label>SPECIALTY</label>
+        <label>Специальности</label>
         <select class="form-control" th:field="*{specialty}">
             <option th:each="type : ${allSpecialties}"
                     th:value="${type.idSpecialty}"
                     th:text="${type}"></option>
         </select>
     </div>
-    <button type="submit" class="btn btn-primary">Send</button>
+    <button type="submit" class="btn btn-primary">Отправить</button>
 </form>
 </body>
 </html>
