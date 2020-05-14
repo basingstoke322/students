@@ -44,7 +44,12 @@ public class BlankController {
 
     @GetMapping("/BlankEdit")
     public String editBlank(@RequestParam("id") int id, Model model) {
-        model.addAttribute("Blank", service.findById(id));
+        try{
+            model.addAttribute("Blank", service.findById(id));
+        }
+        catch (Exception e){
+            return "redirect:/error";
+        }
         return "blankAdd";
     }
 

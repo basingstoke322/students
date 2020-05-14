@@ -39,13 +39,24 @@ public class Type_educationController {
 
     @GetMapping("/type_education_edit")
     public String editTypeEducation(@RequestParam("id") int id, Model model){
-        model.addAttribute("type_education", service.findById(id));
+        try{
+            model.addAttribute("type_education", service.findById(id));
+        }
+        catch (Exception e){
+            return "redirect:/error";
+        }
+
         return "type_education_add";
     }
 
     @GetMapping("/type_education_delete")
     public String safeDelete(@RequestParam("id") int id, Model model){
-        model.addAttribute("delete", service.safeDelete(id));
+        try {
+            model.addAttribute("delete", service.safeDelete(id));
+        }
+        catch (Exception e){
+            return "redirect:/error";
+        }
         return "type_education";
     }
 //    @GetMapping("/specialty_add")

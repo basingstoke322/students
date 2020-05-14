@@ -10,6 +10,9 @@ public class ErrorController {
 
     @GetMapping("/error")
     public String show_error(Model model) {
+        if(model.getAttribute("status").equals("")){
+            return "error404";
+        }
         return "error";
     }
 }

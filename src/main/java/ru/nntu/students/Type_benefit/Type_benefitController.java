@@ -37,13 +37,24 @@ public class Type_benefitController {
 
     @GetMapping("/type_benefit_edit")
     public String editTypeBenefit(@RequestParam("id") int id, Model model){
-        model.addAttribute("type_benefit", service.findById(id));
+        try {
+            model.addAttribute("type_benefit", service.findById(id));
+        }
+        catch (Exception e){
+            return "redirect:/error";
+        }
+
         return "type_benefit_add";
     }
 
     @GetMapping("/type_benefit_delete")
     public String safeDelete(@RequestParam("id") int id, Model model){
-        model.addAttribute("delete", service.safeDelete(id));
+        try{
+            model.addAttribute("delete", service.safeDelete(id));
+        }
+        catch (Exception e){
+            return "redirect:/error";
+        }
         return "type_benefit";
     }
 }

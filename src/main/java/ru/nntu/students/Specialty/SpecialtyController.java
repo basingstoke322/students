@@ -41,7 +41,12 @@ public class SpecialtyController {
 
     @GetMapping("/specialty_edit")
     public String editSpecialty(@RequestParam("id") int id, Model model){
-        model.addAttribute("specialty", service.findById(id));
+        try {
+            model.addAttribute("specialty", service.findById(id));
+        }
+        catch (Exception e){
+            return "redirect:/error";
+        }
         return "specialty_add";
     }
 

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ru.nntu.students.Benefit.BenefitService;
 import ru.nntu.students.Specialty.SpecialtyService;
-import ru.nntu.students.Type_benefit.Type_benefitService;
 import ru.nntu.students.blank.BlankService;
 
 @Controller
@@ -57,16 +56,27 @@ public class EntrantController {
 
     @GetMapping("/entrant_edit")
     public String editEntrant(@RequestParam("id") int id, Model model){
-        model.addAttribute("entrant", entrantService.findById(id));
-        model.addAttribute("allBenefits", benefitService.getAllBenefits());
-        model.addAttribute("allSpecialties", specialtyService.getAllSpecialties());
-        model.addAttribute("allBlanks", blankService.getAllBlank());
+        try {
+            model.addAttribute("entrant", entrantService.findById(id));
+            model.addAttribute("allBenefits", benefitService.getAllBenefits());
+            model.addAttribute("allSpecialties", specialtyService.getAllSpecialties());
+            model.addAttribute("allBlanks", blankService.getAllBlank());
+        }
+        catch (Exception e){
+            return "redirect:/error";
+        }
+
         return "entrant_add";
     }
 
     @GetMapping("/entrant_delete")
     public String safeDelete(@RequestParam("id") int id, Model model){
-        model.addAttribute("delete", entrantService.safeDelete(id));
+        try {
+            model.addAttribute("delete", entrantService.safeDelete(id));
+        }
+        catch (Exception e){
+            return "redirect:/error";
+        }
         return "entrant";
     }
 }
