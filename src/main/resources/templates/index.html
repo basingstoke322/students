@@ -3,7 +3,7 @@
 <head th:insert="~{parts/head}">
 </head>
 
-<body class="container">
+<body class="container body-class">
 <div th:fragment="logout" class="logout row" sec:authorize="isAuthenticated()" style="padding-top: 1rem;">
     <div class="col">
         <div class="row" style="float: right; width: 420px;">
@@ -19,7 +19,7 @@
     </div>
 </div>
 <div class="row">
-    <ul class="list-group">
+    <ul class="list-group" style="padding-top: 10%;">
         <li class="list-group-item"><a href="/specialty">Специальности</a></li>
         <li class="list-group-item"><a href="/type_benefit">Виды привилегий</a></li>
         <li class="list-group-item"><a href="/type_education">Виды образования</a></li>
